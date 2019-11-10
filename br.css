@@ -1,0 +1,419 @@
+@charset "EUC-JP";
+
+/*--------------------------------------------------------------------
+ *	バトロワ用CSSファイル
+ *	バージョン2.1.0からCSSをがっつり使用するようになりました。
+ *------------------------------------------------------------------*/
+/*--------------------------------------------------------------------
+ *	汎用スタイル
+ *------------------------------------------------------------------*/
+html{
+	background-color: black;
+	color: white;
+	font-family: sans-serif;
+	text-align: center;
+	font-size: 14px;
+}
+
+h1{
+	color: red;
+	font-family: 'ＭＳ Ｐ明朝',serif;
+}
+h2{
+	color:red;
+}
+/*
+ *	テーブル
+ */
+table{
+	margin: 0 auto;
+	border-collapse: collapse;
+	border: solid white 1px;
+}
+td{
+	empty-cells: show;
+}
+th{
+	empty-cells: show;
+	background-color: #000066;
+}
+
+/*
+ *	リンク
+ */
+a{
+	color: #ff0000;
+	font-weight: bold;
+}
+/*
+ *	カーソルが乗っている時(デフォルトでは同じ色になっている)
+ */
+a:hover{
+	color: #ff0000;
+}
+/*
+ *	その他ブロック
+ */
+.caution{
+	color:yellow;
+	font-weight:bold;
+}
+/*
+ *	その他インライン
+ */
+em{
+	font-style: normal;
+	font-weight: bold;
+	color:red;
+}
+/*
+ *	フッター
+ */
+footer{
+	text-align:right;
+}
+footer ul{
+	list-style:none;
+	margin:0;
+}
+
+
+
+/*--------------------------------------------------------------------
+ *	ここ以降は特定のページ専用のスタイルになります
+ *------------------------------------------------------------------*/
+/*--------------------------------------------------------------------
+ *	トップページ
+ *------------------------------------------------------------------*/
+#TOP ul#NAVI{
+	padding:0;
+	list-style: none;
+}
+#TOP #NAVI li{
+	font-size: x-large;
+	font-weight: bold;
+	color: red;
+	margin: 1em 0;
+}
+
+
+/*--------------------------------------------------------------------
+ *	登録画面
+ *------------------------------------------------------------------*/
+#REGIST .caution{
+	font-size: large;
+}
+
+
+
+/*--------------------------------------------------------------------
+ *	ゲーム画面共通
+ *	大幅にレイアウトを変えるというのでなければ
+ *	各値の調整をするだけでいいのでそこまで難しくはない・・・と思う
+ *	値の調整を失敗するとコマンド部分が下に移動してレイアウトが崩れます
+ *	IE10、Safari8、ChromeとFirefoxの最新版では問題ありません。
+ *------------------------------------------------------------------*/
+/*画面上部の各ページへのナビゲーション*/
+#BRNAVI{
+	margin: 0;
+}
+#BRNAVI li{
+	display: inline;
+}
+#BRNAVI li a::before{
+	content: '>>';
+}
+/*メインの情報部分以外の枠*/
+#BATTLE dl,#BATTLE dl>dt,#BATTLE dl>dd{
+	margin:0;
+	padding: 0;
+}
+#BATTLE dl{
+	border: solid 1px white;
+}
+#BATTLE dt{
+	font-weight: bold;
+	background-color: #000066;
+	border-bottom: solid 1px white;
+}
+#BATTLE dd{
+	text-align:left;
+}
+/*
+ *各情報枠を囲むラッパー
+ *「display: -ms-flexbox;」と「-ms-flex-wrap:wrap;」はIE10用
+ *「display: -webkit-flex;」と「-webkit-flex-wrap:wrap;」はSafari、古めのChrome用
+ */
+#BATTLE div{
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+	-ms-flex-wrap:wrap;
+	-webkit-flex-wrap:wrap;
+	flex-wrap:wrap;
+	margin: 0 auto;
+	font-size: 14px;
+}
+#BATTLE #LOG{
+	min-height: 180px;
+}
+/*ログ表示関連*/
+#LOG span{
+	font-weight: bold;
+}
+/*ダメージ*/
+#LOG span.dmg{
+	color: red;
+}
+/*戦闘ログ*/
+#LOG span.atk{
+	color: yellow;
+}
+/*死亡*/
+#LOG span.dead{
+	color: red;
+}
+/*いろいろなメッセージとか*/
+#LOG span.msg{
+	color: lime;
+}
+/*--------------------------------------------------------------------
+ *	ゲーム画面(メイン)
+ *------------------------------------------------------------------*/
+#BATTLE #STATUS{
+	width:800px;
+}
+/*負傷箇所表示部*/
+.wound{
+	font-weight: bold;
+	color: red;
+	border-color:white;
+}
+#STATUS>table,#STATUS>dl{
+	box-sizing: border-box;
+}
+/*ステータス部分*/
+#STATUS #PC{
+	width: 480px;
+}
+#STATUS #COMMAND{
+	width: 320px;
+}
+#STATUS #LOG{
+	width: 480px;
+}
+/*(崩れていなければ)右下の情報部分*/
+#STATUS #PGINFO{
+	width: 320px;
+}
+/*--------------------------------------------------------------------
+ *	ゲーム画面(レーダー)
+ *------------------------------------------------------------------*/
+#RADAR{
+	width: 650px;
+}
+#RADAR table{
+	width: 390px;
+}
+#RADAR th,#RADAR td{
+	font-size:16px;
+	width: 2em;
+	height: 2em;
+	font-weight: bold;
+	text-align: center;
+}
+#RADAR td.dead,#RADAR td.self{
+	color:red;
+	border-color: white;
+}
+#RADAR>table,#RADAR>dl{
+	box-sizing: border-box;
+}
+#RADAR #COMMAND{
+	width:260px;
+}
+#RADAR #LOG{
+	width:650px;
+}
+/*--------------------------------------------------------------------
+ *	ゲーム画面(戦闘画面)
+ *------------------------------------------------------------------*/
+#ATTACK{
+	width: 700px;
+}
+#ATTACK #DATA{
+	width: 450px;
+	min-height: 300px;
+}
+#ATTACK #DATA table{
+	border: none;
+	text-align: center;
+	margin-top: 1em;
+}
+#ATTACK>table,#ATTACK>dl{
+	box-sizing: border-box;
+}
+#ATTACK #COMMAND{
+	width: 250px;
+}
+#ATTACK #LOG{
+	width:700px;
+}
+
+/*--------------------------------------------------------------------
+ *	ニュース
+ *------------------------------------------------------------------*/
+#NEWS{
+	text-align:left;
+}
+#NEWS #DEATHAREA dt{
+	color: lime;
+	font-weight: bold;
+}
+/*日付部分*/
+#NEWS .date{
+	color: lime;
+	font-weight: bold;
+}
+#NEWS li span{
+	font-weight: bold;
+}
+/*新規登録*/
+.entry span{
+	color: yellow;
+}
+/*死亡*/
+.dead span{
+	color: red;
+}
+/*遺言*/
+.dead .message{
+	color: red;
+}
+/*グループ*/
+.group span{
+	color: aqua;
+}
+/*スピーカー*/
+.speaker span{
+	color: lime;
+}
+/*ハッキング*/
+.hack span{
+	color: lime;
+}
+/*禁止エリア追加*/
+.addarea span{
+	color: lime;
+}
+/*管理人からのメッセージ*/
+.admin span{
+	color: orange;
+}
+/*PG終了*/
+.end span{
+	color: lime;
+}
+.back{
+	text-align: center;
+}
+
+
+
+/*--------------------------------------------------------------------
+ *	生存者一覧
+ *------------------------------------------------------------------*/
+#RANK td:last-child{
+	width: 300px;
+	text-align: left;
+}
+
+
+
+/*--------------------------------------------------------------------
+ *	会場地図
+ *------------------------------------------------------------------*/
+#MAP table{
+	margin: 1em auto;
+}
+#MAP td,#MAP th{
+	width: 60px;
+	height: 60px;
+	font-weight: bold;
+	text-align: center;
+}
+#MAP th{
+	font-size: 24px;
+	color: #000000;
+	background-color: #cccccc;
+}
+/*禁止エリア*/
+#MAP .dead{
+	color: red;
+	border-color: white;
+}
+/*次回禁止エリア*/
+#MAP .caution{
+	color: yellow;
+	border-color: white;
+}
+/*海の部分の背景色(これはレーダー画面でも使用する)*/
+td.sea{
+	background-color: #00ffff;
+}
+
+
+
+/*--------------------------------------------------------------------
+ *	アイコン一覧
+ *------------------------------------------------------------------*/
+#ICONLIST table img{
+	display: block;
+}
+#ICONLIST table td{
+	font-weight: bold;
+}
+
+/*--------------------------------------------------------------------
+ *	メッセンジャー
+ *------------------------------------------------------------------*/
+#MESSENGER table{
+	border: none;
+	text-align: left;
+}
+/*こちらから送ったメッセージ*/
+#MESSENGER .from{
+	font-weight: bold;
+	color: skyblue;
+}
+/*自分個人に宛てられたメッセージ*/
+#MESSENGER .me{
+	font-weight: bold;
+	color: yellow;
+}
+/*所属しているグループに宛てられたメッセージ*/
+#MESSENGER .grp{
+	font-weight: bold;
+	color: red;
+}
+/*全員に宛てられたメッセージ*/
+#MESSENGER .all{
+	font-weight: bold;
+	color: lime;
+}
+
+/*--------------------------------------------------------------------
+ *	管理モード
+ *------------------------------------------------------------------*/
+#ADMIN ul{
+	display: inline-block;
+	list-style: none;
+	text-align: left;
+}
+#ADMIN .dead td{
+	color: red;
+	border-color: white;
+}
+#ADMIN table[border="0"] td{
+	text-align: left;
+}

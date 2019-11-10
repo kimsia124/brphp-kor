@@ -1,0 +1,38 @@
+@charset "EUC-JP";
+
+/*説明書用CSS*/
+
+body{
+  color:      #ffffff;
+  background: #000000;
+}
+h1{
+  font-size: 150%;
+  color:     #ff0000;
+}
+h2{
+  font-size: 100%;
+  color:     #ff0000;
+}
+p{
+  margin-left: 20px;
+}
+li{
+  margin:     1em 0 0 -20px;
+  list-style: none;
+}
+a{
+  font-weight: bold;
+  color:       #ff0000;
+}
+em{
+  font-weight: bold;
+  font-style:  normal;
+  color:       #00ff00;
+}
+footer{
+	text-align:right;
+}
+footer li{
+	margin:0;
+}
