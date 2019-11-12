@@ -14,7 +14,7 @@ function head($pageid = false){
 <!DOCTYPE html>
 <html lang="ja" id="<?php echo $id?>">
 <head>
-<meta charset="EUC-JP">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" href="br.css">
 <script src="br.js"></script>
 <title><?php echo TITLE?></title>
@@ -70,7 +70,7 @@ function string_operation(&$array,$admin = false){
 		if(is_array($value)){
 			string_operation($value,$admin);
 		}else{
-			$value = htmlspecialchars($value,ENT_QUOTES,'EUC-JP',false);
+			$value = htmlspecialchars($value,ENT_QUOTES,'UTF-8',false);
 			$value = str_replace(array(',',' ',"\t"),array('&#44;','&nbsp;',''),$value);
 
 			$value = preg_replace("/(\r\n|\r|\n)/","<br>",trim($value));

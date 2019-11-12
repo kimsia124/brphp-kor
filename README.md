@@ -55,7 +55,7 @@ brphp\
 ├ readme.txt           Read me (업로드 불필요, * 한국어 버전은 readme.md)
 ├ rule.html            설명서
 ├ rule.css             설명서용 CSS 파일
-├ dat\                 고정정보 저장 폴더(폴더명 변경 필요)
+├ dat\                 고정정보 저장 폴더 (폴더명 변경 필요)
 │ ├ customiza.txt     각종 csv 파일 커스터마이징 방법.
 │ ├ item.csv          각 지역에 배치되는 아이템 데이터 파일
 │ ├ npc.csv           NPC 데이터 파일
@@ -78,27 +78,27 @@ brphp\
 │ ├ lib2.php          br.php에서 이용되는 함수
 │ ├ move.php          이동, 탐색 처리
 │ └ reset.php         초기화
-└ log\                 各種ログデータ格納ディレクトリ(名前を変更すべきです)
-   ├ item\             アイテムデータ格納ディレクトリ
-   │ └ **_item.log    各エリアのアイテム(** … エリアの番号)
-   ├ back\             各ユーザーのバックアップデータ格納ディレクトリ
-   │ └ ***_back.log   バックアップデータ(*** … ユーザーID)
-   ├ user\             各ユーザーのデータ格納ディレクトリ
-   │ └ ***_data.log   ユーザーデータ(*** … ユーザーID_番号)
-   ├ area.log          禁止エリアデータ
-   ├ admin.log         メッセンジャーから管理者へのメッセージログ
-   ├ flag.log          フラグファイル
-   ├ member.log        登録人数データ
-   ├ messenger.log     メッセンジャーのメッセージデータ
-   ├ mes_mem.log       メッセンジャーのログインメンバーデータ
-   ├ news.log          進行状況データ
-   ├ sound.log         音データ
-   ├ time.log          開始時間
-   └ win.log           優勝者データ
-※各フォルダ内に入っているindex.htmlは覗き見を防ぐためのダミーファイルです。
+└ log\                 각종 로그 데이터 저장 폴더 (폴더명 변경 필요)
+   ├ item\             아이템 데이터 저장 폴더
+   │ └ \**_item.log    각 지역의 아이템(** = 지역 번호)
+   ├ back\             사용자 별 백업 데이터 저장 폴더
+   │ └ *\**_back.log   백업 데이터 (*** = 유저 ID)
+   ├ user\             사용자 별 데이터 저장 폴더
+   │ └ *\**_data.log   사용자 데이터(*** = 유저 ID)
+   ├ area.log          금지 지역 데이터
+   ├ admin.log         메신저에서 관리자에게 보내는 메시지 로그
+   ├ flag.log          플래그 파일
+   ├ member.log        등록 인원 데이터
+   ├ messenger.log     메신저 메시지 데이터
+   ├ mes_mem.log       메신저 로그인 멤버 데이터
+   ├ news.log          진행 상황 데이터
+   ├ sound.log         소리 데이터
+   ├ time.log          시작 시간
+   └ win.log           우승자 데이터
+※ 각 폴더 안 index.html은 폴더 내부 파일 확인을 막기 위한 더미 파일입니다. 
 
 
-◆更新履歴
+◆ 갱신 이력 (번역 안함)
 2016-02-23 2.1.1 -> 2.2.0
   1:item.csvで使用可能な構文を追加しました。追加したのは次の通り
       * A|B:AまたはB

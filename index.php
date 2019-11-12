@@ -1,12 +1,12 @@
 <?php
 /*--------------------------------------------------------------------
- *	BRトップページ
+ *	BR 톱페이지
  *------------------------------------------------------------------*/
 require 'pref.php';
 $c_id = (isset($_COOKIE['id']))? $_COOKIE['id']:"";
 $c_pass = (isset($_COOKIE['pass']))? $_COOKIE['pass']:"";
 
-$regist = '<a href="regist.php">新規登録</a>';
+$regist = '<a href="regist.php">회원가입</a>';
 
 if(file_exists(MEMBERFILE)){
 	list($m,$f,$mc,$fc) = explode(",",file_get_contents(MEMBERFILE));
@@ -15,7 +15,7 @@ if(file_exists(MEMBERFILE)){
 	$listnum = 0;
 }
 
-//登録可能かどうかの判定
+//등록 가능 여부 확인
 if($br['stopflg'] == '未初期化'){
 	$regist = '登録停止中(準備未完了)';
 }elseif($br['stopflg'] == '開始前'){
